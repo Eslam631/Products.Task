@@ -8,7 +8,7 @@ namespace Domain.Modules
 {
     public class Rating
     {
-        public string Rate { get; set; } = default!;
-        public string Count { get; set; } = default!;
+        public decimal Rate { get; set; } = default!;
+        public int Count { get; set; } = default!;
     }
 }

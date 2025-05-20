@@ -1,5 +1,7 @@
 
+using Domain.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Persistence;
 using Persistence.Data.Context;
 
 namespace Products
@@ -14,7 +16,7 @@ namespace Products
 
             builder.Services.AddControllers();
 
-
+            builder.Services.AddScoped<IDataSeeding, DataSeeding>();
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
             option.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,6 +24,14 @@ namespace Products
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+
+            using var Scope = app.Services.CreateScope();
+
+        var Seed=   Scope.ServiceProvider.GetRequiredService<IDataSeeding>();
+
+            Seed.DataSeed();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

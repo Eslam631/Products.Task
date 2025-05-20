@@ -27,7 +27,7 @@ namespace Persistence.Data.Configuration
             builder.Property(p => p.Specs)
             .HasConversion(
                 v => JsonConvert.SerializeObject(v), // To database (JSON)
-                v => JsonConvert.DeserializeObject<List<Specs>>(v) ?? new List<Specs>() // From database
+                v => JsonConvert.DeserializeObject<object>(v) ??new object() // From database
             );
 
             //builder.Property(P => P.Specs).HasConversion(V=>JsonCovert.)

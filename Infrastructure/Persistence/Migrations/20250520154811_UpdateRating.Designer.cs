@@ -8,11 +8,11 @@ using Persistence.Data.Context;
 
 #nullable disable
 
-namespace Persistence.Data.Migrations
+namespace Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250520145221_InitializeDatabase")]
-    partial class InitializeDatabase
+    [Migration("20250520154811_UpdateRating")]
+    partial class UpdateRating
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,13 +73,11 @@ namespace Persistence.Data.Migrations
                             b1.Property<int>("ProductId")
                                 .HasColumnType("int");
 
-                            b1.Property<string>("Count")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                            b1.Property<int>("Count")
+                                .HasColumnType("int");
 
-                            b1.Property<string>("Rate")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                            b1.Property<decimal>("Rate")
+                                .HasColumnType("decimal(18,2)");
 
                             b1.HasKey("ProductId");
 
