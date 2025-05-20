@@ -3,6 +3,9 @@ using Domain.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Persistence.Data.Context;
+using Persistence.Repository;
+using Services.MappingProfile;
+using System.Reflection.Metadata;
 
 namespace Products
 {
@@ -20,6 +23,10 @@ namespace Products
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
             option.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            builder.Services.AddAutoMapper(typeof(ProductProfile).Assembly);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
