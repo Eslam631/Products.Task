@@ -1,0 +1,382 @@
+[
+	{
+	
+		"Title": "Smartphone X",
+		"Price": 799.99,
+		"Description": "Latest smartphone with advanced features",
+		"Category": "electronics",
+		"Brand": "TechCo",
+		"Stock": 50,
+		"Image": "https://fakeapi.net/Images/smartphone.jpg",
+		"Specs": {
+			"color": "black",
+			"weight": "180g",
+			"storage": "128GB"
+		},
+		"Rating": {
+			"Rate": 4.5,
+			"Count": 120
+		}
+	},
+	{
+	
+		"Title": "Classic T-Shirt",
+		"Price": 29.99,
+		"Description": "Comfortable cotton t-shirt",
+		"Category": "clothing",
+		"Brand": "FashionBrand",
+		"Stock": 200,
+		"Image": "https://fakeapi.net/Images/tshirt.jpg",
+		"Specs": {
+			"color": "white",
+			"material": "100% cotton",
+			"size": "M"
+		},
+		"Rating": {
+			"Rate": 4.2,
+			"Count": 85
+		}
+	},
+	{
+		
+		"Title": "Wireless Earbuds",
+		"Price": 149.99,
+		"Description": "High-quality wireless earbuds with noise cancellation",
+		"Category": "electronics",
+		"Brand": "AudioTech",
+		"Stock": 75,
+		"Image": "https://fakeapi.net/Images/earbuds.jpg",
+		"Specs": {
+			"color": "white",
+			"battery": "24h",
+			"waterproof": true
+		},
+		"Rating": {
+			"Rate": 4.7,
+			"Count": 200
+		}
+	},
+	{
+		
+		"Title": "Laptop Pro 15",
+		"Price": 1499.99,
+		"Description": "Powerful laptop for professionals",
+		"Category": "electronics",
+		"Brand": "CompTech",
+		"Stock": 30,
+		"Image": "https://fakeapi.net/Images/laptop.jpg",
+		"Specs": {
+			"screen": "15 inch",
+			"ram": "16GB",
+			"storage": "512GB SSD"
+		},
+		"Rating": {
+			"Rate": 4.6,
+			"Count": 150
+		}
+	},
+	{
+		
+		"Title": "Running Shoes",
+		"Price": 69.99,
+		"Description": "Lightweight and comfortable running shoes",
+		"Category": "footwear",
+		"Brand": "RunFast",
+		"Stock": 120,
+		"Image": "https://fakeapi.net/Images/shoes.jpg",
+		"Specs": {
+			"color": "blue",
+			"size": "10",
+			"material": "mesh"
+		},
+		"Rating": {
+			"Rate": 4.3,
+			"Count": 95
+		}
+	},
+	{
+		
+		"Title": "Blender Pro",
+		"Price": 89.99,
+		"Description": "High-power blender for smoothies and more",
+		"Category": "appliances",
+		"Brand": "KitchenMaster",
+		"Stock": 60,
+		"Image": "https://fakeapi.net/Images/blender.jpg",
+		"Specs": {
+			"color": "silver",
+			"power": "1200W",
+			"capacity": "1.5L"
+		},
+		"Rating": {
+			"Rate": 4.5,
+			"Count": 70
+		}
+	},
+	{
+		"Title": "Yoga Mat",
+		"Price": 25.99,
+		"Description": "Non-slip yoga mat for daily practice",
+		"Category": "sports",
+		"Brand": "FitWell",
+		"Stock": 300,
+		"Image": "https://fakeapi.net/Images/yogamat.jpg",
+		"Specs": {
+			"color": "purple",
+			"thickness": "6mm",
+			"material": "PVC"
+		},
+		"Rating": {
+			"Rate": 4.1,
+			"Count": 40
+		}
+	},
+	{
+		
+		"Title": "Smart Watch",
+		"Price": 199.99,
+		"Description": "Smartwatch with fitness tracking features",
+		"Category": "electronics",
+		"Brand": "TechTime",
+		"Stock": 80,
+		"Image": "https://fakeapi.net/Images/smartwatch.jpg",
+		"Specs": {
+			"color": "black",
+			"battery": "48h",
+			"waterproof": true
+		},
+		"Rating": {
+			"Rate": 4.4,
+			"Count": 180
+		}
+	},
+	{
+		
+		"Title": "Gaming Chair",
+		"Price": 299.99,
+		"Description": "Ergonomic gaming chair with lumbar support",
+		"Category": "furniture",
+		"Brand": "GameComfort",
+		"Stock": 40,
+		"Image": "https://fakeapi.net/Images/gamingchair.jpg",
+		"Specs": {
+			"color": "red",
+			"material": "leather",
+			"maxWeight": "150kg"
+		},
+		"Rating": {
+			"Rate": 4.5,
+			"Count": 90
+		}
+	},
+	{
+		
+		"Title": "Leather Wallet",
+		"Price": 49.99,
+		"Description": "Genuine leather wallet with multiple card slots",
+		"Category": "accessories",
+		"Brand": "LuxLeather",
+		"Stock": 120,
+		"Image": "https://fakeapi.net/Images/wallet.jpg",
+		"Specs": {
+			"color": "brown",
+			"material": "leather",
+			"compartments": 10
+		},
+		"Rating": {
+			"Rate": 4.3,
+			"Count": 60
+		}
+	},
+	{
+		
+		"Title": "Water Bottle",
+		"Price": 15.99,
+		"Description": "Stainless steel water bottle, keeps water cool",
+		"Category": "outdoor",
+		"Brand": "EcoSip",
+		"Stock": 200,
+		"Image": "https://fakeapi.net/Images/waterbottle.jpg",
+		"Specs": {
+			"color": "silver",
+			"capacity": "750ml",
+			"insulation": "double wall"
+		},
+		"Rating": {
+			"Rate": 4.6,
+			"Count": 120
+		}
+	},
+	{
+		
+		"Title": "Electric Toothbrush",
+		"Price": 59.99,
+		"Description": "Electric toothbrush with smart timer",
+		"Category": "health",
+		"Brand": "CleanSmile",
+		"Stock": 100,
+		"Image": "https://fakeapi.net/Images/toothbrush.jpg",
+		"Specs": {
+			"color": "white",
+			"battery": "2 weeks",
+			"modes": 3
+		},
+		"Rating": {
+			"Rate": 4.4,
+			"Count": 140
+		}
+	},
+	{
+		
+		"Title": "Coffee Maker",
+		"Price": 129.99,
+		"Description": "Automatic coffee maker with timer",
+		"Category": "appliances",
+		"Brand": "BrewMaster",
+		"Stock": 50,
+		"Image": "https://fakeapi.net/Images/coffeemaker.jpg",
+		"Specs": {
+			"color": "black",
+			"capacity": "1.2L",
+			"programs": 5
+		},
+		"Rating": {
+			"Rate": 4.5,
+			"Count": 90
+		}
+	},
+	{
+		
+		"Title": "Wireless Mouse",
+		"Price": 39.99,
+		"Description": "Ergonomic wireless mouse with adjustable DPI",
+		"Category": "electronics",
+		"Brand": "TechGear",
+		"Stock": 200,
+		"Image": "https://fakeapi.net/Images/mouse.jpg",
+		"Specs": {
+			"color": "gray",
+			"battery": "1 year",
+			"connection": "Bluetooth"
+		},
+		"Rating": {
+			"Rate": 4.2,
+			"Count": 160
+		}
+	},
+	{
+		
+		"Title": "Portable Charger",
+		"Price": 49.99,
+		"Description": "10,000mAh portable charger with dual output",
+		"Category": "electronics",
+		"Brand": "PowerPlus",
+		"Stock": 100,
+		"Image": "https://fakeapi.net/Images/charger.jpg",
+		"Specs": {
+			"color": "black",
+			"capacity": "10000mAh",
+			"output": "2.4A"
+		},
+		"Rating": {
+			"Rate": 4.3,
+			"Count": 130
+		}
+	},
+	{
+		
+		"Title": "Hiking Backpack",
+		"Price": 89.99,
+		"Description": "Durable backpack with multiple compartments",
+		"Category": "outdoor",
+		"Brand": "AdventureGear",
+		"Stock": 80,
+		"Image": "https://fakeapi.net/Images/backpack.jpg",
+		"Specs": {
+			"color": "green",
+			"capacity": "30L",
+			"waterproof": true
+		},
+		"Rating": {
+			"Rate": 4.6,
+			"Count": 70
+		}
+	},
+	{
+		
+		"Title": "Desk Lamp",
+		"Price": 24.99,
+		"Description": "Adjustable desk lamp with LED lighting",
+		"Category": "furniture",
+		"Brand": "BrightHome",
+		"Stock": 150,
+		"Image": "https://fakeapi.net/Images/desklamp.jpg",
+		"Specs": {
+			"color": "white",
+			"power": "5W",
+			"adjustable": true
+		},
+		"Rating": {
+			"Rate": 4.4,
+			"Count": 110
+		}
+	},
+	{
+		
+		"Title": "Sunglasses",
+		"Price": 79.99,
+		"Description": "Stylish sunglasses with UV protection",
+		"Category": "accessories",
+		"Brand": "ShadeCo",
+		"Stock": 90,
+		"Image": "https://fakeapi.net/Images/sunglasses.jpg",
+		"Specs": {
+			"color": "black",
+			"lens": "polarized",
+			"frame": "metal"
+		},
+		"Rating": {
+			"Rate": 4.5,
+			"Count": 95
+		}
+	},
+	{
+		
+		"Title": "Camping Tent",
+		"Price": 129.99,
+		"Description": "2-person tent, waterproof and easy to set up",
+		"Category": "outdoor",
+		"Brand": "CampEasy",
+		"Stock": 40,
+		"Image": "https://fakeapi.net/Images/tent.jpg",
+		"Specs": {
+			"color": "orange",
+			"capacity": "2 people",
+			"waterproof": true
+		},
+		"Rating": {
+			"Rate": 4.7,
+			"Count": 60
+		}
+	},
+	{
+		
+		"Title": "Electric Kettle",
+		"Price": 39.99,
+		"Description": "Electric kettle with auto shut-off",
+		"Category": "appliances",
+		"Brand": "HotSip",
+		"Stock": 110,
+		"Image": "https://fakeapi.net/Images/kettle.jpg",
+		"Specs": {
+			"color": "white",
+			"capacity": "1.7L",
+			"power": "1500W"
+		},
+		"Rating": {
+			"Rate": 4.3,
+			"Count": 50
+		}
+	}
+]
+
