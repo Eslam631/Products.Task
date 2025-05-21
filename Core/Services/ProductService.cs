@@ -1,46 +1,61 @@
 ﻿using Abstraction;
-using AutoMapper;
 using Domain.Contracts;
 using Domain.Modules;
+using Newtonsoft.Json;
 using Shared.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Services
 {
-    public class ProductService(IUnitOfWork _unitOfWork,IMapper _mapper) : IProductService
+    public class ProductService(IUnitOfWork _unitOfWork) : IProductService
     {
         public ProductDataDto GetAllProduct(int page=1,int pageSize=10)
         {
-         var Product=   _unitOfWork.GenericRepository<Product>().GetAll();
+         var Products= _unitOfWork.GenericRepository<Product>().GetAll();
 
-
+           
 
             int PageSize = pageSize >10?10: pageSize;
             int Take = PageSize;
             int Skip = (page - 1) * pageSize;
 
-         var AfterPagination=   Product.Skip(Skip).Take(Take);
+         var AfterPagination=   Products.Skip(Skip).Take(Take);
+
+            var Map = AfterPagination.Select(P => new ProductToReturnDto()
+            {
+                Brand = P.Brand,
+                Category = P.Category.ToString(),
+                Description = P.Description,
+                Id = P.Id,
+                Image = P.Image,
+                Price = P.Price,
+                Rating = new RatingDto()
+                {
+                    Count = P.Rating.Count,
+                    Rate = P.Rating.Rate
+                },
+                Specs =JsonConvert.DeserializeObject<Dictionary<string,dynamic>>(P.Specs),
+                Stock = P.Stock,
+                Title = P.Title,
 
 
-        var Mapper= _mapper.Map<IEnumerable<ProductToReturnDto>>(AfterPagination);
+
+            });
+
 
 
             var Pagination = new PaginationDto()
             {
                 page = page,
                 limit = AfterPagination.Count(),
-                total = Product.Count()
+                total = Products.Count()
 
             };
 
 
 
             return new ProductDataDto() {
-            data=Mapper ,
+            data=Map ,
              pagination=Pagination
             
             

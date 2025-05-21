@@ -1,12 +1,8 @@
 ﻿using Abstraction;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+
 using Shared.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Presentation.Controllers
 {
@@ -16,10 +12,10 @@ namespace Presentation.Controllers
     {
 
         [HttpGet("Product")]
-        public ActionResult<ProductDataDto> GetAllProduct(int Page)
+        public ActionResult<ProductDataDto> GetAllProduct([FromQuery]int? Page)
         {
 
-            var Result = _productService.GetAllProduct(Page );
+            var Result = _productService.GetAllProduct(Page??1 );
         
             return Ok(Result);
         

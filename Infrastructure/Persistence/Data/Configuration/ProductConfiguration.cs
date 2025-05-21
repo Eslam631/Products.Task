@@ -1,12 +1,8 @@
 ﻿using Domain.Modules;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace Persistence.Data.Configuration
 {
@@ -23,19 +19,9 @@ namespace Persistence.Data.Configuration
          
             builder.Property(P => P.Description).HasColumnType("nvarchar(200)");
 
-
-            builder.Property(p => p.Specs)
-            .HasConversion(
-                v => JsonConvert.SerializeObject(v), // To database (JSON)
-                v => JsonConvert.DeserializeObject<object>(v) ??new object() // From database
-            );
-
-            //builder.Property(P => P.Specs).HasConversion(V=>JsonCovert.)
-
             #endregion
 
             #region Relation
-
 
             builder.OwnsOne(P => P.Rating);
 

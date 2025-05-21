@@ -2,14 +2,10 @@
 using Domain.Modules;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Text;
+using Persistence.Dto;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+
 
 namespace Persistence
 {
@@ -17,27 +13,43 @@ namespace Persistence
     {
         public void DataSeed()
         {
-          if(_dbContext.Database.GetPendingMigrations().Any()) 
+            if (_dbContext.Database.GetPendingMigrations().Any())
                 _dbContext.Database.Migrate();
+
             if (!_dbContext.Products.Any())
             {
+                var json = File.ReadAllText(@"..\Infrastructure\Persistence\DataSeedFile\json-sorter.json");
 
-                var Product = File.ReadAllText(@"..\Infrastructure\Persistence\DataSeedFile\json-sorter.json");
                 var options = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 };
                 options.Converters.Add(new JsonStringEnumConverter());
-                var ProductList=JsonSerializer.Deserialize<List<Product>>(Product,options);
 
-                if(ProductList is not null&&ProductList.Any())
-                    _dbContext.Products.AddRange(ProductList);
+                //convert Json To ProductSeedDto
+                var dtoList = JsonSerializer.Deserialize<List<ProductSeedDto>>(json, options);
 
+                if (dtoList != null && dtoList.Any())
+                {
+                    //convert ProductSeedDto To product
+                     var products = dtoList.Select(dto => new Product
+                    {
+                        Title = dto.Title,
+                        Price = dto.Price,
+                        Description = dto.Description,
+                        Category = Enum.TryParse<Category>(dto.Category,out var result)?result:Category.furniture,
+                        Brand = dto.Brand,
+                        Stock = dto.Stock,
+                        Image = dto.Image,
+                        Specs = dto.Specs.GetRawText(), 
+                        Rating = dto.Rating
+                    }).ToList();
 
+                    _dbContext.Products.AddRange(products);
+                    _dbContext.SaveChanges();
+                }
             }
 
-
-            _dbContext.SaveChanges();
 
         }
     }

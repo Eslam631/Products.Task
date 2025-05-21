@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Shared.DTOs
 {
@@ -26,7 +22,7 @@ namespace Shared.DTOs
 
         public string Image { get; set; } = default!;
 
-        public object Specs { get; set; } = new();
+        public Dictionary<string,dynamic> Specs { get; set; } = new();
 
         public RatingDto Rating { get; set; } = default!;
     }

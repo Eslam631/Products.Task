@@ -60,12 +60,12 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Modules.Product", b =>
                 {
-                    b.OwnsOne("Domain.Modules.Rating", "Rating", b1 =>
+                    b.OwnsOne("Domain.Modules.Product.Rating#Domain.Modules.Rating", "Rating", b1 =>
                         {
                             b1.Property<int>("ProductId")
                                 .HasColumnType("int");
@@ -78,7 +78,7 @@ namespace Persistence.Migrations
 
                             b1.HasKey("ProductId");
 
-                            b1.ToTable("Products");
+                            b1.ToTable("Products", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("ProductId");

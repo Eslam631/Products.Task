@@ -6,8 +6,8 @@ using Persistence;
 using Persistence.Data.Context;
 using Persistence.Repository;
 using Services;
-using Services.MappingProfile;
-using System.Reflection.Metadata;
+
+
 
 namespace Products
 {
@@ -30,7 +30,7 @@ namespace Products
 
             builder.Services.AddScoped<IProductService, ProductService>();
 
-            builder.Services.AddAutoMapper(typeof(ProductProfile).Assembly);
+           
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

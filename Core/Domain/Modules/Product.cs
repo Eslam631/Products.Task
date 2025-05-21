@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using System.Dynamic;
 
 namespace Domain.Modules
 {
 	public class Product : BaseEntity
 	{
-
-
 		public string Title { get; set; } = default!;
-
 
 		public decimal Price { get; set; }
 		public string Description { get; set; } = default!;
@@ -21,15 +16,11 @@ namespace Domain.Modules
 
 		public string Brand { get; set; }=default!;
 
-
-
-
-	
 		public string Image { get; set; } = default!;
 
-		public object Specs { get; set; } = new();
+        public string Specs { get; set; } = default!;
 
-		public Rating Rating { get; set; } = default!;
+        public Rating Rating { get; set; } = default!;
 
 
 
