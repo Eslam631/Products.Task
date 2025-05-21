@@ -6,12 +6,13 @@ using Persistence;
 using Persistence.Data.Context;
 using Persistence.Repository;
 using Services;
+using System.Threading.Tasks;
 
 namespace Products
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +35,7 @@ namespace Products
 
         var Seed=   Scope.ServiceProvider.GetRequiredService<IDataSeeding>();
 
-            Seed.DataSeed();
+          await  Seed.DataSeed();
 
 
             // Configure the HTTP request pipeline.
