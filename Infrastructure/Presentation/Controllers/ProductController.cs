@@ -1,8 +1,6 @@
 ﻿using Abstraction;
 using Microsoft.AspNetCore.Mvc;
-
 using Shared.DTOs;
-
 
 namespace Presentation.Controllers
 {
@@ -10,12 +8,11 @@ namespace Presentation.Controllers
     [Route("[controller]")]
     public class ProductController(IProductService _productService):ControllerBase
     {
-
         [HttpGet("Product")]
-        public ActionResult<ProductDataDto> GetAllProduct([FromQuery]int? Page)
+        public async Task<ActionResult<ProductDataDto>> GetAllProduct([FromQuery]int? Page)
         {
 
-            var Result = _productService.GetAllProduct(Page??1 );
+            var Result =await _productService.GetAllProduct(Page??1 );
         
             return Ok(Result);
         

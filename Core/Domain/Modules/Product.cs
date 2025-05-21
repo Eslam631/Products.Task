@@ -1,7 +1,4 @@
 ﻿
-
-using System.Dynamic;
-
 namespace Domain.Modules
 {
 	public class Product : BaseEntity

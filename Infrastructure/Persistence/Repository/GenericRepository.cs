@@ -1,5 +1,6 @@
 ﻿using Domain.Contracts;
 using Domain.Modules;
+using Microsoft.EntityFrameworkCore;
 using Persistence.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Persistence.Repository
 {
     public class GenericRepository<T>(ApplicationDbContext _dbContext) : IGenericRepository<T> where T : BaseEntity
     {
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return _dbContext.Set<T>().ToList(); 
+            return await _dbContext.Set<T>().ToListAsync(); 
         }
     }
 

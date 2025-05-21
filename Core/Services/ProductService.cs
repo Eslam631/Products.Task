@@ -3,15 +3,16 @@ using Domain.Contracts;
 using Domain.Modules;
 using Newtonsoft.Json;
 using Shared.DTOs;
+using System.Threading.Tasks;
 
 
 namespace Services
 {
     public class ProductService(IUnitOfWork _unitOfWork) : IProductService
     {
-        public ProductDataDto GetAllProduct(int page=1,int pageSize=10)
+        public async Task<ProductDataDto> GetAllProduct(int page=1,int pageSize=10)
         {
-         var Products= _unitOfWork.GenericRepository<Product>().GetAll();
+         var Products=await _unitOfWork.GenericRepository<Product>().GetAllAsync();
 
            
 

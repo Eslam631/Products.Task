@@ -1,5 +1,4 @@
 ﻿
-
 namespace Domain.Modules
 {
     public class Rating

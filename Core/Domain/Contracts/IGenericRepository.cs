@@ -5,7 +5,7 @@ namespace Domain.Contracts
 {
 public interface IGenericRepository<T> where T:BaseEntity
     {
-        public IEnumerable<T> GetAll();
+        public Task<IEnumerable<T>> GetAllAsync();
 
     }
 }

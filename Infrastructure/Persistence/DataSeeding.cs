@@ -5,20 +5,21 @@ using Persistence.Data.Context;
 using Persistence.Dto;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 
 namespace Persistence
 {
     public class DataSeeding(ApplicationDbContext _dbContext) : IDataSeeding
     {
-        public void DataSeed()
+        public async Task DataSeed()
         {
-            if (_dbContext.Database.GetPendingMigrations().Any())
+            if ((await _dbContext.Database.GetPendingMigrationsAsync()).Any())
                 _dbContext.Database.Migrate();
 
             if (!_dbContext.Products.Any())
             {
-                var json = File.ReadAllText(@"..\Infrastructure\Persistence\DataSeedFile\json-sorter.json");
+                var json = File.OpenRead(@"..\Infrastructure\Persistence\DataSeedFile\json-sorter.json");
 
                 var options = new JsonSerializerOptions
                 {
@@ -27,7 +28,7 @@ namespace Persistence
                 options.Converters.Add(new JsonStringEnumConverter());
 
                 //convert Json To ProductSeedDto
-                var dtoList = JsonSerializer.Deserialize<List<ProductSeedDto>>(json, options);
+                var dtoList =await JsonSerializer.DeserializeAsync<List<ProductSeedDto>>(json, options);
 
                 if (dtoList != null && dtoList.Any())
                 {
